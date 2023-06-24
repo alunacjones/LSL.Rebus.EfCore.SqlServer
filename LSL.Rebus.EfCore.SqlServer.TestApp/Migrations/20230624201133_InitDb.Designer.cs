@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LSL.Rebus.EfCore.SqlServer.TestApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230624183820_initdb")]
-    partial class initdb
+    [Migration("20230624201133_InitDb")]
+    partial class InitDb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,7 +24,7 @@ namespace LSL.Rebus.EfCore.SqlServer.TestApp.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("SagaIndexes", b =>
+            modelBuilder.Entity("SagaIndex", b =>
                 {
                     b.Property<string>("key")
                         .HasMaxLength(200)
@@ -46,7 +46,7 @@ namespace LSL.Rebus.EfCore.SqlServer.TestApp.Migrations
                     b.HasIndex("saga_id")
                         .IsUnique();
 
-                    b.ToTable("SagaIndexes");
+                    b.ToTable("SagaIndex");
                 });
 
             modelBuilder.Entity("Sagas", b =>
@@ -67,11 +67,11 @@ namespace LSL.Rebus.EfCore.SqlServer.TestApp.Migrations
                     b.ToTable("Sagas");
                 });
 
-            modelBuilder.Entity("SagaIndexes", b =>
+            modelBuilder.Entity("SagaIndex", b =>
                 {
                     b.HasOne("Sagas", "Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilderToMicrosoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder")
                         .WithOne()
-                        .HasForeignKey("SagaIndexes", "saga_id")
+                        .HasForeignKey("SagaIndex", "saga_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

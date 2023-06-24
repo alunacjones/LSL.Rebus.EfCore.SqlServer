@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace LSL.Rebus.EfCore.SqlServer.TestApp.Migrations
 {
     /// <inheritdoc />
-    public partial class initdb : Migration
+    public partial class InitDb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -25,7 +25,7 @@ namespace LSL.Rebus.EfCore.SqlServer.TestApp.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SagaIndexes",
+                name: "SagaIndex",
                 columns: table => new
                 {
                     key = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
@@ -35,9 +35,9 @@ namespace LSL.Rebus.EfCore.SqlServer.TestApp.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SagaIndexes", x => new { x.key, x.value, x.sagatype });
+                    table.PrimaryKey("PK_SagaIndex", x => new { x.key, x.value, x.sagatype });
                     table.ForeignKey(
-                        name: "FK_SagaIndexes_Sagas_saga_id",
+                        name: "FK_SagaIndex_Sagas_saga_id",
                         column: x => x.sagaid,
                         principalTable: "Sagas",
                         principalColumn: "id",
@@ -45,8 +45,8 @@ namespace LSL.Rebus.EfCore.SqlServer.TestApp.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_SagaIndexes_saga_id",
-                table: "SagaIndexes",
+                name: "IX_SagaIndex_saga_id",
+                table: "SagaIndex",
                 column: "saga_id",
                 unique: true);
         }
@@ -55,7 +55,7 @@ namespace LSL.Rebus.EfCore.SqlServer.TestApp.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "SagaIndexes");
+                name: "SagaIndex");
 
             migrationBuilder.DropTable(
                 name: "Sagas");
