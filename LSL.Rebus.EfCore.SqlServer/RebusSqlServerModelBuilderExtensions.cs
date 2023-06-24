@@ -1,4 +1,5 @@
 using System;
+using LSL.Rebus.EfCore.SqlServer.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace LSL.Rebus.EfCore.SqlServer
@@ -17,24 +18,11 @@ namespace LSL.Rebus.EfCore.SqlServer
         /// <returns>The source ModelBuilder</returns>
         public static ModelBuilder AddRebusSagaTablesForSqlServer(this ModelBuilder source, string dataTableName = "Sagas", string indexTableName = "SagaIndex")
         {
-            var dataTable = source.Entity(dataTableName);
+            var dataTable = source.Entity<Saga>().ToTable(dataTableName);            
 
-            dataTable.Property<Guid>("id").IsRequired();
-            dataTable.Property<int>("revision").IsRequired();
-            dataTable.Property<byte[]>("data").IsRequired();
-
-            dataTable.HasKey(new[] { "id" });
-
-            var indexTable = source.Entity(indexTableName);
-
-            indexTable.Property<string>("saga_type").IsRequired().HasMaxLength(40);
-            indexTable.Property<string>("key").IsRequired().HasMaxLength(200);
-            indexTable.Property<string>("value").IsRequired().HasMaxLength(200);
-            indexTable.Property<Guid>("saga_id").IsRequired();
-
-            indexTable.HasKey(new[] { "key", "value", "saga_type" });
-            indexTable.HasIndex(new[] { "saga_id" });
-            indexTable.HasOne(dataTableName, $"{indexTable}To{dataTable}").WithOne().HasForeignKey(indexTableName, new[] { "saga_id" }).OnDelete(DeleteBehavior.Cascade);
+            var indexTable = source.Entity<SagaIndex>().ToTable(indexTableName);
+            indexTable.HasKey(e => new { e.Key, e.Value, e.SagaType });
+            indexTable.HasOne<Saga>().WithOne().OnDelete(DeleteBehavior.Cascade);
             
             return source;
         }
