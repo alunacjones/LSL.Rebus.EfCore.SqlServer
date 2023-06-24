@@ -1,12 +1,14 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 
 namespace LSL.Rebus.EfCore.SqlServer.Entities
 {
     /// <summary>
     /// The Entity to represent to Sagas table for Rebus SqlServer Sagas
     /// </summary>
+    [ExcludeFromCodeCoverage]
     public class Saga
     {
         /// <summary>
