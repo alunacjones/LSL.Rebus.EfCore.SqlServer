@@ -3,7 +3,7 @@ image: Visual Studio 2019
 configuration: Release
 environment:
   CODECOV_TOKEN:
-    secure: <appveyor-encrypted-code-cov-token>
+    secure: wbKzQJZ+PDKetZA8zFPdDEV0mvaUZQSrde7VwDxpfmpO3uccQD/fDVM+H+poSYC8
   keyfile_salt:
     secure: 7MQg/ApVF+pQ6BH9mIygmZZXYylcKrYU0MDPVhFKq/3lwqrD07yBFDjWnX90WEFDMVPrMKuC2ljPCTsgwlhtnQ==
   keyfile_secret:
