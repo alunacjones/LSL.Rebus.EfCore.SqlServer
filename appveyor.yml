@@ -37,7 +37,7 @@ deploy:
   on:
     branch: master
   api_key:
-    secure: zT5PjZloU9HIMGHOVi/1/Mn+HDbUZGHCJvIEAfxdJ1E7Qt17Bbje2MtklFErXmtc
+    secure: cJPL0WDl85VScRtWG7f9UmHgByUNZavHXQoFa+GZqcekPu4j4+n7lgkPpfs8art/
 skip_commits:
   files:
     - '**/*.md'     
