@@ -15,7 +15,7 @@ namespace LSL.Rebus.EfCore.SqlServer
         /// <param name="dataTableName">The name for the data table (default is the Rebus SqlServer documentation's name)</param>
         /// <param name="indexTableName">The name for the index table (default is the Rebus SqlServer doumentation's name)</param>
         /// <returns>The source ModelBuilder</returns>
-        public static ModelBuilder AddRebusSqlSagaTables(this ModelBuilder source, string dataTableName = "Sagas", string indexTableName = "SagaIndex")
+        public static ModelBuilder AddRebusSagaTablesForSqlServer(this ModelBuilder source, string dataTableName = "Sagas", string indexTableName = "SagaIndex")
         {
             var dataTable = source.Entity(dataTableName);
 
