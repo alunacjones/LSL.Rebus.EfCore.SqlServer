@@ -1,11 +1,13 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace LSL.Rebus.EfCore.SqlServer.Entities
 {
     /// <summary>
     /// Outbox
     /// </summary>
+    [ExcludeFromCodeCoverage]
     public class Outbox
     {
         /// <summary>
