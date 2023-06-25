@@ -36,8 +36,7 @@ deploy:
 - provider: NuGet
   on:
     branch: master
-  api_key:
-    secure: cJPL0WDl85VScRtWG7f9UmHgByUNZavHXQoFa+GZqcekPu4j4+n7lgkPpfs8art/
+  api_key: $(MY_NUGET_API_KEY)
 skip_commits:
   files:
     - '**/*.md'     
