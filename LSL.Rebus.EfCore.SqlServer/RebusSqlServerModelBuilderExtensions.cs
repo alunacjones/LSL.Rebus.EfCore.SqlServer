@@ -26,5 +26,19 @@ namespace LSL.Rebus.EfCore.SqlServer
             
             return source;
         }
+
+        /// <summary>
+        /// Adds the necessary entities to implement the SqlServer Saga tables for Rebus
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="tableName">The name for the table (default is the Rebus SqlServer documentation's name)</param>
+        /// <returns>The source ModelBuilder</returns>
+        public static ModelBuilder AddRebusTimeoutTableForSqlServer(this ModelBuilder source, string tableName = "Timeouts")
+        {
+            var table = source.Entity<Timeout>().ToTable(tableName);
+            table.HasIndex(e => e.DueTime);
+
+            return source;
+        }
     }
 }

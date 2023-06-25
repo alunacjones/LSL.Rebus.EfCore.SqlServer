@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Worker">
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -14,12 +14,12 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.0"/> 
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.0" /> 
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0" />       
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />    
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LSL.Rebus.EfCore.SqlServer\LSL.Rebus.EfCore.SqlServer.csproj"/>    
+    <ProjectReference Include="..\LSL.Rebus.EfCore.SqlServer\LSL.Rebus.EfCore.SqlServer.csproj" />    
   </ItemGroup>
 </Project>
