@@ -1,5 +1,5 @@
 [![Build status](https://img.shields.io/appveyor/ci/alunacjones/lsl-rebus-efcore-sqlserver.svg)](https://ci.appveyor.com/project/alunacjones/lsl-rebus-efcore-sqlserver)
-[![codecov](https://codecov.io/gh/alunacjones/LSL.Rebus.EfCore.SqlServer/branch/master/graph/badge.svg)](https://codecov.io/gh/alunacjones/LSL.Rebus.EfCore.SqlServer)
+[![Coverage Status](https://coveralls.io/repos/github/alunacjones/LSL.Rebus.EfCore.SqlServer/badge.svg?branch=master)](https://coveralls.io/github/alunacjones/LSL.Rebus.EfCore.SqlServer?branch=master)
 [![NuGet](https://img.shields.io/nuget/v/LSL.Rebus.EfCore.SqlServer.svg)](https://www.nuget.org/packages/LSL.Rebus.EfCore.SqlServer/)
 
 # LSL.Rebus.EfCore.SqlServer
