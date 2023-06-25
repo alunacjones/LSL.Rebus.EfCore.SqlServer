@@ -14,8 +14,8 @@
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <Version>1.0.1</Version>
     <PackageVersion>1.0.1</PackageVersion>
-    <PackageTags></PackageTags>
-    <PackageDescription>Description here</PackageDescription>
+    <PackageTags>entity;framework;core;ef;efcore;ef-core;rebus;sqlserver;sql-server;mssql;</PackageTags>
+    <PackageDescription>ModelBuilder extensions to build entities for your DbContext for use with Rebus.SqlServer Sagas, Timeouts and Outboxes</PackageDescription>
     <RepositoryUrl>https://github.com/alunacjones/LSL.Rebus.EfCore.SqlServer</RepositoryUrl>
     <Authors>alunacjones</Authors>
   </PropertyGroup>
