@@ -24,4 +24,8 @@
   <ItemGroup>
     <ProjectReference Include="..\LSL.Rebus.EfCore.SqlServer\LSL.Rebus.EfCore.SqlServer.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Include="readme.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>  
 </Project>
