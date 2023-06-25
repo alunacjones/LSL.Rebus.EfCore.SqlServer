@@ -2,8 +2,8 @@ version: 1.0.{build}
 image: Visual Studio 2022
 configuration: Release
 environment:
-  CODECOV_TOKEN:
-    secure: wbKzQJZ+PDKetZA8zFPdDEV0mvaUZQSrde7VwDxpfmpO3uccQD/fDVM+H+poSYC8
+  COVERALLS_REPO_TOKEN:
+    secure: d1imbeQdCA5e6EGkPwHvQm+jDln+suNOKiW2dAcLcBaNFeMWDaraFnMSY+d8zUFH
   keyfile_salt:
     secure: 7MQg/ApVF+pQ6BH9mIygmZZXYylcKrYU0MDPVhFKq/3lwqrD07yBFDjWnX90WEFDMVPrMKuC2ljPCTsgwlhtnQ==
   keyfile_secret:
@@ -21,7 +21,7 @@ dotnet_csproj:
   file_version: '{version}'
   informational_version: '{version}'
 before_build:
-- choco install codecov
+- dotnet tool install coveralls.net
 build_script:
 - cmd: >-
     dotnet build -c Release
@@ -29,7 +29,8 @@ build_script:
     dotnet pack -c Release
 test_script:
 - cmd: dotnet test -c Release --no-build --no-restore --test-adapter-path:. --logger:Appveyor /p:CollectCoverage=true /p:CoverletOutputFormat="opencover" /p:CoverletOutput=../lcov
-- cmd: codecov -d -v -f "lcov.opencover.xml"
+#- cmd: dotnet tool install coveralls.net
+- cmd: dotnet csmacnz.Coveralls --opencover -i .\lcov.opencover.xml
 artifacts:
 - path: '**\*.nupkg'
 deploy:
