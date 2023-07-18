@@ -23,8 +23,9 @@ To add the required entities to your `DbContext` then following should be added 
         ...
     }
 ```
+The default values are held as constants in the `TableNames` static class as `TableNames.Saga` && `TableNames.SagaIndex`
 
-The default table names are `Sages` and `SagaIndex`. To use custom table names pass them into the call as below:
+The default table names are `Sagas` and `SagaIndex`. To use custom table names pass them into the call as below:
 
 ```csharp
     using LSL.Rebus.EfCore.SqlServer;
@@ -51,6 +52,7 @@ To add the required entities to your `DbContext` then following should be added 
         ...
     }
 ```
+The default value is held as a constant in the `TableNames` static class as `TableNames.Outbox`
 
 The default table name is `Outbox`. To use a custom table name pass the table name into the call as below:
 
@@ -79,6 +81,8 @@ To add the required entities to your `DbContext` then following should be added 
         ...
     }
 ```
+
+The default value is held as a constant in the `TableNames` static class as `TableNames.Timeouts`
 
 The default table name is `Timeouts`. To use a custom table name pass the table name into the call as below:
 
