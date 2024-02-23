@@ -1,4 +1,3 @@
-using System;
 using LSL.Rebus.EfCore.SqlServer.Entities;
 using Microsoft.EntityFrameworkCore;
 
